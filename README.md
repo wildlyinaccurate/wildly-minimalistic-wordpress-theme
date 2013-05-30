@@ -4,7 +4,7 @@ Version: 3.1
 
 ## Contributors:
 
-Matt Banks ( [@mattbanks](http://twitter.com/mattbanks) / [kernelcreativemedia.com](http://www.kernelcreativemedia.com) / [mattbanks.me](http://www.mattbanks.me) )
+Matt Banks ( [@wildly-minimalistic](http://twitter.com/wildly-minimalistic) / [kernelcreativemedia.com](http://www.kernelcreativemedia.com) / [wildly-minimalistic.me](http://www.wildly-minimalistic.me) )
 
 ## Summary
 

@@ -2,8 +2,8 @@
 /**
  * The template used for displaying post meta information
  *
- * @package mattbanks
- * @since mattbanks 2.5
+ * @package wildly-minimalistic
+ * @since wildly-minimalistic 2.5
  */
 ?>
 

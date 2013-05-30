@@ -2,8 +2,8 @@
 /**
  * The template for displaying Comments.
  *
- * @package mattbanks
- * @since mattbanks 2.6
+ * @package wildly-minimalistic
+ * @since wildly-minimalistic 2.6
  */
 ?>
 
