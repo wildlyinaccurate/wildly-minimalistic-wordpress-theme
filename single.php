@@ -1,17 +1,17 @@
 <?php get_header(); ?>
 
-	<section id="main" role="main">
+<section id="main" role="main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); ?>
 
-			<?php get_template_part( 'templates/partials/content', 'single' ); ?>
+        <?php get_template_part('templates/partials/content', 'single'); ?>
 
-			<?php comments_template(); ?>
+        <?php comments_template(); ?>
 
-		<?php endwhile; ?>
+    <?php endwhile; ?>
 
-	</section> <!-- /#main -->
+</section> <!-- /#main -->
 
 <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

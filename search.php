@@ -1,41 +1,41 @@
 <?php get_header(); ?>
 
-	<section id="main" role="main">
+<section id="main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+    <?php if (have_posts()) : ?>
 
-			<h1>Search Results</h1>
+        <h1>Search Results</h1>
 
-			<?php get_template_part( 'templates/partials/inc', 'nav' ); ?>
+        <?php get_template_part('templates/partials/inc', 'nav'); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        <?php while (have_posts()) : the_post(); ?>
 
-				<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+            <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-					<?php get_template_part( 'templates/partials/inc', 'meta' ); ?>
+                <?php get_template_part('templates/partials/inc', 'meta'); ?>
 
-					<div class="entry">
+                <div class="entry">
 
-						<?php the_excerpt(); ?>
+                    <?php the_excerpt(); ?>
 
-					</div>
+                </div>
 
-				</article>
+            </article>
 
-			<?php endwhile; ?>
+        <?php endwhile; ?>
 
-			<?php get_template_part( 'templates/partials/inc', 'nav' ); ?>
+        <?php get_template_part('templates/partials/inc', 'nav'); ?>
 
-		<?php else : ?>
+    <?php else : ?>
 
-			<h1>No posts found.</h1>
+        <h1>No posts found.</h1>
 
-		<?php endif; ?>
+    <?php endif; ?>
 
-	</section> <!-- /#main -->
+</section> <!-- /#main -->
 
 <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

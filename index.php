@@ -1,25 +1,25 @@
 <?php get_header(); ?>
 
-	<section id="main" role="main">
+<section id="main" role="main">
 
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<?php get_template_part( 'templates/partials/content', get_post_format() ); ?>
+        <?php get_template_part('templates/partials/content', get_post_format()); ?>
 
-		<?php endwhile; ?>
+    <?php endwhile; ?>
 
-		<?php get_template_part( 'templates/partials/inc', 'nav' ); ?>
+        <?php get_template_part('templates/partials/inc', 'nav'); ?>
 
-		<?php else : ?>
+    <?php else : ?>
 
-			<article>
-				<h1>Not Found</h1>
-			</article>
+        <article>
+            <h1>Not Found</h1>
+        </article>
 
-		<?php endif; ?>
+    <?php endif; ?>
 
-	</section> <!-- /#main -->
+</section> <!-- /#main -->
 
 <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

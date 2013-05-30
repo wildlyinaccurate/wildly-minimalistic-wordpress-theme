@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -72,12 +72,14 @@ module.exports = function(grunt) {
                     optimizationLevel: 7,
                     progressive: true
                 },
-                files: [{
-                    expand: true,
-                    cwd: 'assets/images/',
-                    src: '**/*',
-                    dest: 'assets/images/'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/images/',
+                        src: '**/*',
+                        dest: 'assets/images/'
+                    }
+                ]
             }
         },
 
