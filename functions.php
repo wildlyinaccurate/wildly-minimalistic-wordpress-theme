@@ -10,15 +10,6 @@ require_once(get_template_directory() . '/lib/theme-functions.php');
 require_once(get_template_directory() . '/lib/theme-comments.php');
 
 /****************************************
-Require Plugins
- *****************************************/
-
-require_once(get_template_directory() . '/lib/class-tgm-plugin-activation.php');
-require_once(get_template_directory() . '/lib/theme-require-plugins.php');
-
-add_action('tgmpa_register', 'mb_register_required_plugins');
-
-/****************************************
 Misc Theme Functions
  *****************************************/
 
