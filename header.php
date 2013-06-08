@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
-    <title><?php wp_title(''); ?></title>
+    <title><?php wp_title('|', true, 'right'); ?></title>
     <meta name="viewport" content="width=device-width">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
     <?php wp_head(); ?>
