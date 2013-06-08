@@ -95,29 +95,8 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        },
-
-        deploy: {
-            staging: {
-                src: "./",
-                dest: "~/path/to/theme",
-                host: "user@host.com",
-                recursive: true,
-                syncDest: true,
-                exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb', '.jshintrc']
-            },
-            production: {
-                src: "./",
-                dest: "~/path/to/theme",
-                host: "user@host.com",
-                recursive: true,
-                syncDest: true,
-                exclude: '<%= rsync.staging.exclude %>'
-            }
         }
     });
-
-    grunt.renameTask('rsync', 'deploy');
 
     grunt.registerTask('default', ['watch']);
 };
