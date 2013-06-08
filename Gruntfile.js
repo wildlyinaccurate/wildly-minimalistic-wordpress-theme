@@ -9,11 +9,11 @@ module.exports = function (grunt) {
                 livereload: true,
             },
             coffee: {
-                files: ['assets/coffee/{,*/}*.coffee'],
+                files: ['src/coffee/{,*/}*.coffee'],
                 tasks: ['coffee']
             },
             compass: {
-                files: ['assets/scss/{,*/}*.{scss,sass}'],
+                files: ['src/scss/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
             js: {
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                     '*.php',
                     '*.js',
                     '*.css',
-                    'assets/scss/{,*/}.scss',
+                    'src/scss/{,*/}.scss',
                     'assets/images/{,*/}.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/coffee',
+                    cwd: 'src/coffee',
                     src: ['**/*.coffee'],
                     dest: 'assets/js',
                     ext: '.js'
@@ -61,6 +61,8 @@ module.exports = function (grunt) {
         compass: {
             dist: {
                 options: {
+                    sassDir: 'src/scss',
+                    cssDir: './',
                     config: 'config.rb',
                     force: true
                 }
