@@ -40,12 +40,6 @@ module.exports = function (grunt) {
             }
         },
 
-        bower: {
-            target: {
-                rjsConfig: 'assets/js/main.js'
-            }
-        },
-
         requirejs: {
             compile: {
                 options: {
@@ -77,21 +71,6 @@ module.exports = function (grunt) {
                 '!assets/js/{,*/}*.min.js',
                 '!assets/js/scripts.js'
             ]
-        },
-
-        uglify: {
-            dist: {
-                options: {
-                    sourceMap: 'assets/js/map/source-map.js'
-                },
-                files: {
-                    'assets/js/scripts.js': [
-                        'assets/js/{,*/}*.js',
-                        '.tmp/js/{,*/}*.js',
-                        '!assets/js/map/source-map.js'
-                    ]
-                }
-            }
         },
 
         imagemin: {
