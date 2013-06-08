@@ -24,7 +24,14 @@ module.exports = function (grunt) {
                 tasks: ['jshint', 'requirejs']
             },
             livereload: {
-                files: ['*.html', '*.php', 'assets/images/{,*/}.{png,jpg,jpeg,gif,webp,svg}']
+                files: [
+                    '*.html',
+                    '*.php',
+                    '*.js',
+                    '*.css',
+                    'assets/scss/{,*/}.scss',
+                    'assets/images/{,*/}.{png,jpg,jpeg,gif,webp,svg}'
+                ]
             }
         },
 
