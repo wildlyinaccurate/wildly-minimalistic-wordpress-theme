@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <title><?php wp_title('|', true, 'right'); ?></title>
     <meta name="viewport" content="width=device-width">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Lato:300,400,700,400italic" rel="stylesheet" type="text/css">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <div id="container">
-        <header>
+        <header id="header">
             <a id="logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
             <div class="description"><?php bloginfo('description'); ?></div>
+
+            <nav id="main-nav">
+                <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+            </nav>
         </header>
 
-        <nav>
-            <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-        </nav>

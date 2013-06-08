@@ -11,8 +11,9 @@ Version: 1.0
 
 @import "../../components/normalize-scss/normalize";
 
-@import "../../components/highlightjs-scss/styles/github";
+@import "variables";
+@import "partials/layout";
+@import "partials/typography";
+@import "partials/code";
 
-body {
-  font-family: Lato, sans-serif;
-}
+@import "../../components/highlightjs-scss/styles/github";

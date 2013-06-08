@@ -1,0 +1,21 @@
+pre, code {
+  font-family: Menlo, Consolas, Monaco, 'Lucida Console', monospace;
+  font-size: 14px;
+}
+
+pre {
+  padding: 16px;
+  margin: 24px 14px;
+}
+
+code {
+  padding: 6px;
+}
+
+$code-background-color: darken($background-color, 1.5%);
+
+pre[class*="highlight"] {
+    background: $code-background-color;
+    border: 1px solid darken($code-background-color, 5%);
+    color: lighten($font-color, 7%);
+}
