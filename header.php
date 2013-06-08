@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
     <title><?php wp_title(''); ?></title>

@@ -1,13 +1,10 @@
-<footer>
-    <?php dynamic_sidebar('Footer'); ?>
-    <p>&copy; <?php echo date("Y");
-        echo " ";
-        bloginfo('name'); ?></p>
-</footer>
+            <footer>
+                <?php dynamic_sidebar('Footer'); ?>
+            </footer>
+        </div>
 
-</div> <!-- /#container -->
+        <?php wp_footer(); ?>
 
-<?php wp_footer(); ?>
-
-</body>
+        <script data-main="<?php bloginfo('template_directory'); ?>/assets/js/main" src="<?php bloginfo('template_directory'); ?>/components/requirejs/require.js"></script>
+    </body>
 </html>

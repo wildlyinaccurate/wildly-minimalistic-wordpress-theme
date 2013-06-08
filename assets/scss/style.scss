@@ -9,7 +9,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Version: 1.0
 */
 
-@import "components/normalize";
+@import "../../components/normalize-scss/normalize";
+
+@import "../../components/highlightjs-scss/styles/github";
 
 body {
   font-family: Lato, sans-serif;

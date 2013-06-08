@@ -1,30 +1,62 @@
 'use strict';
-module.exports = function (grunt) {
 
-    // load all grunt tasks
+module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
-
-        // watch for changes and trigger compass, jshint, uglify and livereload
         watch: {
             options: {
                 livereload: true,
             },
+            coffee: {
+                files: ['assets/coffee/{,*/}*.coffee'],
+                tasks: ['coffee']
+            },
             compass: {
-                files: ['assets/scss/**/*.{scss,sass}'],
+                files: ['assets/scss/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
             js: {
-                files: '<%= jshint.all %>',
-                tasks: ['jshint', 'uglify']
+                files: [
+                    'assets/js/{,*/}*.js',
+                    '!assets/js/scripts.js'
+                ],
+                tasks: ['jshint', 'requirejs']
             },
             livereload: {
-                files: ['*.html', '*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['*.html', '*.php', 'assets/images/{,*/}.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
 
-        // compass and scss
+        coffee: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/coffee',
+                    src: ['**/*.coffee'],
+                    dest: 'assets/js',
+                    ext: '.js'
+                }]
+            }
+        },
+
+        bower: {
+            target: {
+                rjsConfig: 'assets/js/main.js'
+            }
+        },
+
+        requirejs: {
+            compile: {
+                options: {
+                    name: "main",
+                    baseUrl: "assets/js",
+                    mainConfigFile: "assets/js/main.js",
+                    out: "assets/js/scripts.js"
+                }
+            }
+        },
+
         compass: {
             dist: {
                 options: {
@@ -34,7 +66,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // javascript linting with jshint
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -42,30 +73,27 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'assets/js/source/**/*.js'
+                'assets/js/{,*/}*.js',
+                '!assets/js/{,*/}*.min.js',
+                '!assets/js/scripts.js'
             ]
         },
 
-        // uglify to concat, minify, and make source maps
         uglify: {
             dist: {
                 options: {
                     sourceMap: 'assets/js/map/source-map.js'
                 },
                 files: {
-                    'assets/js/plugins.min.js': [
-                        'assets/js/source/plugins.js',
-                        'assets/js/vendor/**/*.js',
-                        '!assets/js/vendor/modernizr*.js'
-                    ],
-                    'assets/js/main.min.js': [
-                        'assets/js/source/main.js'
+                    'assets/js/scripts.js': [
+                        'assets/js/{,*/}*.js',
+                        '.tmp/js/{,*/}*.js',
+                        '!assets/js/map/source-map.js'
                     ]
                 }
             }
         },
 
-        // image optimization
         imagemin: {
             dist: {
                 options: {
@@ -83,7 +111,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // deploy via rsync
         deploy: {
             staging: {
                 src: "./",
@@ -102,13 +129,9 @@ module.exports = function (grunt) {
                 exclude: '<%= rsync.staging.exclude %>'
             }
         }
-
     });
 
-    // rename tasks
     grunt.renameTask('rsync', 'deploy');
 
-    // register task
     grunt.registerTask('default', ['watch']);
-
 };
