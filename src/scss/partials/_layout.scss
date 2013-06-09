@@ -1,14 +1,18 @@
 $header-width: 24%;
-$header-horizontal-padding: 3%;
+$horizontal-padding: 3%;
+
+body {
+  padding: 0 $horizontal-padding;
+}
 
 #header {
   width: $header-width;
-  position: fixed;
-  padding: 0 $header-horizontal-padding;
+  position: absolute;
+  padding-right: $horizontal-padding;
 }
 
 #main {
-  margin-left: $header-width + ($header-horizontal-padding * 2);
-  padding-left: $header-horizontal-padding;
+  margin-left: $header-width + ($horizontal-padding * 2);
+  padding-left: $horizontal-padding;
   border-left: 1px solid #ddd;
 }
