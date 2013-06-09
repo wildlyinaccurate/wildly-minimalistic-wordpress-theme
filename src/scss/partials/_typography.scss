@@ -1,13 +1,13 @@
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: $aside-font-size;
   font-weight: $font-weight;
   line-height: 1.6;
   color: $font-color;
 }
 
 #main {
-  font-size: 20px;
+  font-size: $font-size;
 }
 
 h1, h2, h3, h4 {
