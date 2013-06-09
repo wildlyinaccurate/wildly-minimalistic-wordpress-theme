@@ -12,7 +12,7 @@ code {
   padding: 6px;
 }
 
-$code-background-color: darken($background-color, 1.5%);
+$code-background-color: darken($background-color, 2%);
 
 pre[class*="highlight"] {
     background: $code-background-color;
