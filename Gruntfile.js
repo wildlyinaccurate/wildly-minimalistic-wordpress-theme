@@ -53,7 +53,8 @@ module.exports = function (grunt) {
                     name: "main",
                     baseUrl: "assets/js",
                     mainConfigFile: "assets/js/main.js",
-                    out: "assets/js/scripts.js"
+                    out: "assets/js/scripts.js",
+                    include: "requireLib"
                 }
             }
         },

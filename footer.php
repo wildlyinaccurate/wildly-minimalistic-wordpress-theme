@@ -5,7 +5,7 @@
 
         <?php wp_footer(); ?>
 
-        <script data-main="<?php bloginfo('template_directory'); ?>/assets/js/main" src="<?php bloginfo('template_directory'); ?>/components/requirejs/require.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
 
         <script>
           var _gaq = _gaq || [];
