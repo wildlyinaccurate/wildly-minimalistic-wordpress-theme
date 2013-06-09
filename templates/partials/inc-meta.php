@@ -8,7 +8,6 @@
 ?>
 
 <div class="meta">
-    <em>Posted on:</em> <?php the_time('F jS, Y') ?>
-    <em>by</em> <?php the_author() ?>
-    <?php comments_popup_link( 'No Comments', '1 Comment', '% Comments', 'comments-link', '' ); ?>
+    Posted on <span class="date"><?php the_time('j F Y'); ?></span>
+    by <span class="author"><?php the_author(); ?></span>
 </div>
