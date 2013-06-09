@@ -10,11 +10,15 @@
 
 <body <?php body_class(); ?>>
     <div id="container">
-        <header id="header">
-            <a id="logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
-            <div class="description"><?php bloginfo('description'); ?></div>
+        <div id="sidebar">
+            <header>
+                <a id="logo" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
+                <div class="description"><?php bloginfo('description'); ?></div>
+            </header>
 
             <nav id="main-nav">
                 <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
             </nav>
-        </header>
+
+            <?php get_sidebar(); ?>
+        </div>
