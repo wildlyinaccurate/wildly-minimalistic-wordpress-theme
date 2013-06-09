@@ -1,6 +1,6 @@
-define ['jquery', 'hljs'], ($, hljs) ->
-  hljs.tabReplace = '    ';
+define ['hljs'], (hljs) ->
+  elements = document.getElementsByTagName('pre')
 
-  $('pre, code').each (index, element) ->
-    console.log element, this
-    hljs.highlightBlock(element);
+  hljs.highlightBlock(element, '    ') for element in elements
+
+  @
