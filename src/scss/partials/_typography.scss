@@ -12,6 +12,14 @@ h1, h2, h3, h4 {
   color: $heading-color;
 }
 
+a, a:visited {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
 
 b, strong {
   font-weight: $strong-font-weight;
