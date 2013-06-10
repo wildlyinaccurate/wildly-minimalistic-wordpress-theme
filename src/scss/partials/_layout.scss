@@ -1,5 +1,5 @@
-$header-width: 24%;
-$horizontal-padding: 3%;
+$header-width: 23%;
+$horizontal-padding: 2.5%;
 
 body {
   padding: 0 $horizontal-padding;
@@ -8,11 +8,10 @@ body {
 #sidebar {
   width: $header-width;
   position: absolute;
-  padding-right: $horizontal-padding;
 }
 
 #main {
-  margin-left: $header-width + ($horizontal-padding * 2);
+  margin-left: $header-width + $horizontal-padding;
   padding-left: $horizontal-padding;
   border-left: 1px solid #ddd;
 }
