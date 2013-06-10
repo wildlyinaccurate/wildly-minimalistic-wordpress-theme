@@ -15,3 +15,26 @@ body {
   padding-left: $horizontal-padding;
   border-left: 1px solid #ddd;
 }
+
+// Reduce sidebar size on large screens
+@media (min-width: 1200px) {
+  $large-screen-header-width: 15%;
+
+  #sidebar {
+    width: $large-screen-header-width;
+  }
+
+  #main {
+    margin-left: $large-screen-header-width + $horizontal-padding;
+  }
+}
+
+// Increase padding on small screens
+$small-screen-horizontal-padding: 4%;
+
+@media (max-width: 767px) {
+  #main {
+    margin-left: $header-width + $small-screen-horizontal-padding;
+    padding-left: $small-screen-horizontal-padding;
+  }
+}
