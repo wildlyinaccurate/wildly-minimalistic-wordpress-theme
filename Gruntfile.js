@@ -1,10 +1,5 @@
 // Generated on 2013-06-13 using generator-webapp 0.2.3
 'use strict';
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -26,7 +21,8 @@ module.exports = function (grunt) {
         config: buildConfig,
         watch: {
             options: {
-                nospawn: true
+                nospawn: true,
+                livereload: true
             },
             coffee: {
                 files: ['<%= config.app %>/assets/scripts/{,*/}*.coffee'],
@@ -36,53 +32,26 @@ module.exports = function (grunt) {
                 files: ['<%= config.app %>/assets/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server']
             },
-            livereload: {
-                options: {
-                    livereload: LIVERELOAD_PORT
-                },
+            copy: {
                 files: [
-                    '<%= config.app %>/**/*.php',
-                    '{.tmp,<%= config.app %>}/**/*.css',
-                    '{.tmp,<%= config.app %>}/scripts/**/*.js',
-                    '<%= config.app %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '.tmp/*.css',
+                    '.tmp/assets/scripts/{,*/}*.js',
+                    '<%= config.app %>/assets/styles/{,*/}*.{scss,sass}',
+                    '<%= config.app %>/**/*.php'
+                ],
+                tasks: ['copy:dist']
+            },
+            livereload: {
+                files: [
+                    '<%= config.dist %>/*.css',
+                    '<%= config.dist %>/scripts/*.js',
+                    '<%= config.dist %>/**/*.php'
                 ]
             }
         },
         fixSources: {
             files: ['<%= config.dist %>/footer.php'],
             fixedPath: "<?php bloginfo('template_directory'); ?>"
-        },
-        connect: {
-            options: {
-                port: 9235,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, buildConfig.app)
-                        ];
-                    }
-                }
-            },
-            dist: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, buildConfig.dist)
-                        ];
-                    }
-                }
-            }
-        },
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>'
-            }
         },
         clean: {
             dist: {
@@ -193,24 +162,9 @@ module.exports = function (grunt) {
             dist: [
                 'coffee',
                 'compass:dist',
-                'imagemin',
-                'htmlmin'
+                'imagemin'
             ]
         }
-    });
-
-    grunt.registerTask('server', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-        }
-
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'connect:livereload',
-            'open',
-            'watch'
-        ]);
     });
 
     grunt.registerTask('build', [
