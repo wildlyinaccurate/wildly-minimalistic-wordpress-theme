@@ -196,7 +196,7 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>',
                     dest: '<%= config.dist %>',
                     src: [
-                        '{,*/}*.php',
+                        '**/*.php',
                         '*.{ico,png,txt}',
                         'assets/**'
                     ]
