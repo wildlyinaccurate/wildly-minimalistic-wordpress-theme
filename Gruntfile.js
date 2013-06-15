@@ -41,16 +41,16 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= config.app %>/*.php',
-                    '{.tmp,<%= config.app %>}/assets/styles/{,*/}*.css',
-                    '{.tmp,<%= config.app %>}/assets/scripts/{,*/}*.js',
+                    '<%= config.app %>/*.html',
+                    '{.tmp,<%= config.app %>}/{,*/}*.css',
+                    '{.tmp,<%= config.app %>}/scripts/{,*/}*.js',
                     '<%= config.app %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
         connect: {
             options: {
-                port: 9000,
+                port: 9235,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
@@ -117,7 +117,7 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= config.app %>/assets/styles',
-                cssDir: '.tmp/assets/styles',
+                cssDir: '.tmp/',
                 generatedImagesDir: '.tmp/assets/images/generated',
                 imagesDir: '<%= config.app %>/assets/images',
                 javascriptsDir: '<%= config.app %>/assets/scripts',
@@ -135,28 +135,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // not used since Uglify task does concat,
-        // but still available if needed
-        /*concat: {
-            dist: {}
-        },*/
-        // not enabled since usemin task does concat and uglify
-        // check index.html to edit your build targets
-        // enable this task if you prefer defining your build targets here
-        /*uglify: {
-            dist: {}
-        },*/
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= config.dist %>/assets/scripts/{,*/}*.js',
-                        '<%= config.dist %>/assets/styles/{,*/}*.css',
-                        '<%= config.dist %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
-                    ]
-                }
-            }
-        },
         useminPrepare: {
             options: {
                 dest: '<%= config.dist %>'
@@ -168,7 +146,7 @@ module.exports = function (grunt) {
                 dirs: ['<%= config.dist %>']
             },
             html: ['<%= config.dist %>/{,*/}*.php'],
-            css: ['<%= config.dist %>/assets/styles/{,*/}*.css']
+            css: ['<%= config.dist %>/{,*/}*.css']
         },
         imagemin: {
             dist: {
@@ -183,10 +161,8 @@ module.exports = function (grunt) {
         cssmin: {
             dist: {
                 files: {
-                    '<%= config.dist %>/assets/styles/main.css': [
-                        '.tmp/assets/styles/{,*/}*.css',
-                        '<%= config.app %>/assets/styles/{,*/}*.css'
-                    ]
+                    '<%= config.dist %>/style.css': '.tmp/style.css',
+                    '<%= config.dist %>/editor-style.css': '.tmp/editor-style.css'
                 }
             }
         },
@@ -220,7 +196,7 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>',
                     dest: '<%= config.dist %>',
                     src: [
-                        '*.php',
+                        '{,*/}*.php',
                         '*.{ico,png,txt}',
                         'assets/**'
                     ]
@@ -270,7 +246,6 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
-        'rev',
         'usemin'
     ]);
 
