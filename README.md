@@ -4,7 +4,7 @@ A super-minimalistic theme for the [Wildly Inaccurate blog](http://wildlyinaccur
 
 Very much inspired by Matt Banks' [WordPress Starter Theme](https://github.com/mattbanks/WordPress-Starter-Theme).
 
-![](screenshot.png)
+![](src/screenshot.png)
 
 ## Build
 
