@@ -29,12 +29,19 @@ body {
   }
 }
 
-// Increase padding on small screens
-$small-screen-horizontal-padding: 4%;
-
+// Move the header to the top on smaller screens
 @media (max-width: 767px) {
+  #sidebar {
+    width: 100%;
+    position: static;
+    text-align: center;
+  }
+
   #main {
-    margin-left: $header-width + $small-screen-horizontal-padding;
-    padding-left: $small-screen-horizontal-padding;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    border-left: none;
+    clear: left;
   }
 }

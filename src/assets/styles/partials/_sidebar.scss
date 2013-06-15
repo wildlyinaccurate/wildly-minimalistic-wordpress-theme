@@ -20,3 +20,21 @@
     padding-bottom: 6px;
   }
 }
+
+// Small screens
+@media (max-width: 767px) {
+  // Change to a vertical nav
+  #main-nav li {
+    display: inline-block;
+    margin-left: 32px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  // Hide widgets
+  .widget {
+    display: none;
+  }
+}
