@@ -6,8 +6,8 @@
         <?php wp_footer(); ?>
 
         <!-- build:js(.tmp) scripts/main.js -->
-        <script src="%php bloginfo('template_directory'); %/assets/scripts/vendor/highlight.pack.js"></script>
-        <script src="%php bloginfo('template_directory'); %/assets/scripts/highlight.js"></script>
+        <script src="../src/assets/scripts/vendor/highlight.pack.js"></script>
+        <script src="assets/scripts/highlight.js"></script>
         <!-- endbuild -->
 
         <script>
