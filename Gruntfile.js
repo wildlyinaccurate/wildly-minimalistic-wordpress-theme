@@ -30,16 +30,15 @@ module.exports = function (grunt) {
             },
             compass: {
                 files: ['<%= config.app %>/assets/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server']
+                tasks: ['compass']
             },
             copy: {
                 files: [
                     '.tmp/*.css',
                     '.tmp/assets/scripts/{,*/}*.js',
-                    '<%= config.app %>/assets/styles/{,*/}*.{scss,sass}',
                     '<%= config.app %>/**/*.php'
                 ],
-                tasks: ['copy:dist']
+                tasks: ['useminPrepare', 'copy', 'usemin', 'fixSources']
             },
             livereload: {
                 files: [
@@ -88,23 +87,11 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            options: {
-                sassDir: '<%= config.app %>/assets/styles',
-                cssDir: '.tmp/',
-                generatedImagesDir: '.tmp/assets/images/generated',
-                imagesDir: '<%= config.app %>/assets/images',
-                javascriptsDir: '<%= config.app %>/assets/scripts',
-                fontsDir: '<%= config.app %>/assets/styles/fonts',
-                importPath: '<%= config.app %>/bower_components',
-                httpImagesPath: '/assets/images',
-                httpGeneratedImagesPath: '/assets/images/generated',
-                httpFontsPath: '/assets/styles/fonts',
-                relativeAssets: false
-            },
-            dist: {},
-            server: {
+            dist: {
                 options: {
-                    debugInfo: true
+                    sassDir: '<%= config.app %>/assets/styles',
+                    cssDir: '.tmp/',
+                    force: true
                 }
             }
         },
@@ -112,13 +99,13 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: '<%= config.app %>/{,*/}*.php'
+            html: '<%= config.app %>/footer.php'
         },
         usemin: {
             options: {
                 dirs: ['<%= config.dist %>']
             },
-            html: ['<%= config.dist %>/{,*/}*.php'],
+            html: ['<%= config.dist %>/footer.php'],
             css: ['<%= config.dist %>/{,*/}*.css']
         },
         imagemin: {
@@ -155,10 +142,6 @@ module.exports = function (grunt) {
             }
         },
         concurrent: {
-            server: [
-                'coffee:dist',
-                'compass:server'
-            ],
             dist: [
                 'coffee',
                 'compass:dist',
