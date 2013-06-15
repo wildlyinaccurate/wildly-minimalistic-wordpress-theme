@@ -16,4 +16,4 @@ Template Name: Portfolio Page
 
     </section> <!-- /#main -->
 
-<?php get_footer();
+<?php get_footer(); ?>
