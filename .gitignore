@@ -1,5 +1,5 @@
 .sass-cache
 .tmp
 node_modules
-bower_components
-*.css
+src/bower_components
+dist
