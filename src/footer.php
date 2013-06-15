@@ -5,7 +5,10 @@
 
         <?php wp_footer(); ?>
 
-        <script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
+        <!-- build:js(.tmp) scripts/main.js -->
+        <script src="%php bloginfo('template_directory'); %/assets/scripts/vendor/highlight.pack.js"></script>
+        <script src="%php bloginfo('template_directory'); %/assets/scripts/highlight.js"></script>
+        <!-- endbuild -->
 
         <script>
           var _gaq = _gaq || [];
