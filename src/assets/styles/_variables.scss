@@ -10,3 +10,6 @@ $aside-font-size: 16.5px;
 $heading-color: #34495e;
 $link-color: #1abc9c;
 $link-hover-color: darken($link-color, 12%);
+
+$media-small-screen: "(max-width: 767px)";
+$media-large-screen: "(min-width: 1200px)";
