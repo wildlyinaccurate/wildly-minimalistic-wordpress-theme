@@ -4,11 +4,15 @@ A super-minimalistic theme for the [Wildly Inaccurate blog](http://wildlyinaccur
 
 Very much inspired by Matt Banks' [WordPress Starter Theme](https://github.com/mattbanks/WordPress-Starter-Theme).
 
-![](src/screenshot.png)
+![](src/screenshot.gif)
+
+## Install
+
+To install the theme, create a new directory `wp-content/themes/wildly-minimalistic` and copy the contents of the `dist` directory into it.
 
 ## Build
 
-To build the CSS and JavaScript, you need to run the following:
+To build the theme from source, you need to run the following:
 
  * `bower install`
  * `npm install`
