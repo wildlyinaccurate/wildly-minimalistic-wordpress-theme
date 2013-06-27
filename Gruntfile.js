@@ -124,7 +124,7 @@ module.exports = function (grunt) {
                     dest: '<%= config.dist %>',
                     src: [
                         '**/*.php',
-                        '*.{ico,png,txt}'
+                        '*.{ico,gif,jpg,png,txt}'
                     ]
                 }]
             }
