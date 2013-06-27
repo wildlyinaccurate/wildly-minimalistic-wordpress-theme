@@ -1,3 +1,8 @@
 .post {
+  padding-bottom: 20px;
   margin-bottom: 40px;
+}
+
+.blog .post {
+  border-bottom: 1px solid $border-color;
 }
