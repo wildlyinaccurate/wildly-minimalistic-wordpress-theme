@@ -1,3 +1,3 @@
-elements = document.getElementsByTagName('pre')
+'use strict'
 
-hljs.highlightBlock(element, '    ') for element in elements
+hljs.highlightBlock(element, '    ') for element in document.getElementsByTagName('pre')
