@@ -53,16 +53,6 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc'
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/assets/scripts/**/*.js',
-                '!<%= config.app %>/assets/scripts/vendor/*'
-            ]
-        },
         coffee: {
             dist: {
                 files: [{
@@ -139,7 +129,6 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
-        'jshint',
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
