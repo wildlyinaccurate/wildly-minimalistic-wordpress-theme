@@ -1,47 +1,62 @@
-$header-width: 23%;
-$horizontal-padding: 2.5%;
+$sidebar-width: 23%;
+$horizontal-padding: 2%;
+
+@mixin main-width($sidebar-width, $horizontal-padding) {
+  width: 100% - $sidebar-width - ($horizontal-padding * 2);
+}
 
 body {
-  padding: 0 $horizontal-padding;
+  padding: 40px $horizontal-padding;
+  text-align: center;
+}
+
+#sidebar, #main {
+  text-align: left;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 #sidebar {
-  width: $header-width;
-  position: absolute;
+  vertical-align: top;
+  width: $sidebar-width;
 }
 
 #main {
-  margin-left: $header-width + $horizontal-padding;
+  @include main-width($sidebar-width, $horizontal-padding);
+  max-width: 720px;
+  margin: 0 auto;
   padding-left: $horizontal-padding;
+  margin-left: $horizontal-padding;
   border-left: 1px solid $border-color;
 }
 
 // Reduce sidebar size on large screens
-@media (min-width: 1200px) {
-  $large-screen-header-width: 15%;
+@media #{$media-large-screen} {
+  $large-screen-sidebar-width: 16%;
+  $large-screen-horizontal-padding: 2%;
 
   #sidebar {
-    width: $large-screen-header-width;
+    width: $large-screen-sidebar-width;
   }
 
   #main {
-    margin-left: $large-screen-header-width + $horizontal-padding;
+    @include main-width($large-screen-sidebar-width, $large-screen-horizontal-padding);
+    padding-left: $large-screen-horizontal-padding;
+    margin-left: $large-screen-horizontal-padding;
   }
 }
 
 // Move the header to the top on smaller screens
-@media (max-width: 767px) {
+@media #{$media-small-screen} {
   #sidebar {
     width: 100%;
-    position: static;
     text-align: center;
   }
 
   #main {
-    margin-left: 0;
     padding-left: 0;
+    margin-left: 0;
     width: 100%;
     border-left: none;
-    clear: left;
   }
 }

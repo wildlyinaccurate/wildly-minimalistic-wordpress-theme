@@ -37,7 +37,7 @@
 }
 
 // Small screens
-@media (max-width: 767px) {
+@media #{$media-small-screen} {
   // Change to a vertical nav
   #main-nav li {
     display: inline-block;

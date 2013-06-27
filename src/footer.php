@@ -1,7 +1,6 @@
-            <footer id="footer">
-                <?php dynamic_sidebar('Footer'); ?>
-            </footer>
-        </div>
+        <footer id="footer">
+            <?php dynamic_sidebar('Footer'); ?>
+        </footer>
 
         <?php wp_footer(); ?>
 
