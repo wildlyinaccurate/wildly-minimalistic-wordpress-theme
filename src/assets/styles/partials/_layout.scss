@@ -1,5 +1,5 @@
 $sidebar-width: 23%;
-$horizontal-padding: 2%;
+$horizontal-padding: 2.5%;
 
 @mixin main-width($sidebar-width, $horizontal-padding) {
   width: 100% - $sidebar-width - ($horizontal-padding * 2);
@@ -48,6 +48,10 @@ body {
 
 // Move the header to the top on smaller screens
 @media #{$media-small-screen} {
+  body {
+    padding: 40px ($horizontal-padding * 2);
+  }
+
   #sidebar {
     width: 100%;
     text-align: center;
