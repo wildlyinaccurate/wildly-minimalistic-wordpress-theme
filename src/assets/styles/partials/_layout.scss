@@ -13,7 +13,7 @@ body {
 #main {
   margin-left: $header-width + $horizontal-padding;
   padding-left: $horizontal-padding;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid $border-color;
 }
 
 // Reduce sidebar size on large screens
