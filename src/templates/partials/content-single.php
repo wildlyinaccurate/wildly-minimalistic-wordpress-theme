@@ -22,6 +22,9 @@
 
         <?php get_template_part('templates/partials/inc', 'meta'); ?>
 
-        <?php the_tags('Tagged with ', ', ', ''); ?>
+        <nav class="post-navigation">
+            <span class="navigation-next"><?php previous_post_link(); ?></span>
+            <span class="navigation-previous"><?php next_post_link(); ?></span>
+        </nav>
     </div>
 </article>
