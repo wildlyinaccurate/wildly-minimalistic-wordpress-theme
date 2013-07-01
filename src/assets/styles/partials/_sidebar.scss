@@ -1,25 +1,3 @@
-.menu {
-  font-size: $font-size;
-  font-weight: $strong-font-weight;
-  padding-left: 0;
-  list-style-type: none;
-
-  $current-menu-border-width: 4px;
-  $current-menu-border: $current-menu-border-width solid $border-color;
-
-  .current-menu-item > a {
-    border-left: $current-menu-border;
-    padding-left: 4px;
-    margin-left: -($current-menu-border-width + 4px);
-
-    @media #{$media-small-screen} {
-      border-left: none;
-      border-bottom: $current-menu-border;
-      padding: 0 2px 0;
-    }
-  }
-}
-
 .widget-title {
   margin-bottom: 0;
 }
@@ -36,19 +14,8 @@
   }
 }
 
-// Small screens
+// Hide widgets on small screens
 @media #{$media-small-screen} {
-  // Change to a vertical nav
-  #main-nav li {
-    display: inline-block;
-    margin-left: 32px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  // Hide widgets
   .widget {
     display: none;
   }

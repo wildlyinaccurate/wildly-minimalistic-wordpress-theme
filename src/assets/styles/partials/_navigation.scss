@@ -1,0 +1,51 @@
+.menu {
+  font-size: $font-size;
+  font-weight: $strong-font-weight;
+  padding-left: 0;
+  list-style-type: none;
+
+  $current-menu-border-width: 4px;
+  $current-menu-border: $current-menu-border-width solid $border-color;
+
+  .current-menu-item > a {
+    border-left: $current-menu-border;
+    padding-left: 4px;
+    margin-left: -($current-menu-border-width + 4px);
+
+    @media #{$media-small-screen} {
+      border-left: none;
+      border-bottom: $current-menu-border;
+      padding: 0 2px 0;
+    }
+  }
+}
+
+// Page and post navigation
+.navigation-previous, .navigation-next {
+  width: 50%;
+}
+
+.navigation-previous {
+  float: right;
+  text-align: right;
+}
+
+.navigation-next {
+  float: left;
+}
+
+.post-navigation {
+  padding: 40px 0;
+}
+
+// Change to a vertical nav on small screens
+@media #{$media-small-screen} {
+  .menu li {
+    display: inline-block;
+    margin-left: 32px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
