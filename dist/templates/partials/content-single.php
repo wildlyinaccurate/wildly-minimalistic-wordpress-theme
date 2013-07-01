@@ -10,9 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <h1><?php the_title(); ?></h1>
 
-    <?php edit_post_link(); ?>
-
-    <p class="comments-link"><?php comments_popup_link('Leave a reply'); ?></p>
+    <?php get_template_part('templates/partials/inc', 'comments-link'); ?>
 
     <div class="entry">
         <?php the_content(); ?>
