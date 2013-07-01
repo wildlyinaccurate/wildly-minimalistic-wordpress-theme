@@ -8,14 +8,14 @@
   $current-menu-border: $current-menu-border-width solid $border-color;
 
   .current-menu-item > a {
-    border-bottom: $current-menu-border;
-    padding-bottom: 2px;
+    border-left: $current-menu-border;
+    padding-left: 4px;
+    margin-left: -($current-menu-border-width + 4px);
 
-    @media #{$media-large-screen} {
-      border-bottom: none;
-      border-left: $current-menu-border;
-      padding: 0 0 0 4px;
-      margin-left: -($current-menu-border-width + 4px);
+    @media #{$media-small-screen} {
+      border-left: none;
+      border-bottom: $current-menu-border;
+      padding: 0 2px 0;
     }
   }
 }
