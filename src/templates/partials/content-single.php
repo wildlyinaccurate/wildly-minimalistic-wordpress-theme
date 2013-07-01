@@ -12,6 +12,8 @@
 
     <?php edit_post_link(); ?>
 
+    <p class="comments-link"><?php comments_popup_link('Leave a reply'); ?></p>
+
     <div class="entry">
         <?php the_content(); ?>
 
