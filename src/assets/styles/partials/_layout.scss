@@ -30,6 +30,12 @@ body {
   border-left: 1px solid $border-color;
 }
 
+#footer {
+  border-top: 1px solid $border-color;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
 // Reduce sidebar size on large screens
 @media #{$media-large-screen} {
   $large-screen-sidebar-width: 16%;
