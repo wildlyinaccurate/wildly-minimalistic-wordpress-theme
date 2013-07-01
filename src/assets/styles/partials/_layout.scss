@@ -1,8 +1,10 @@
 $sidebar-width: 23%;
 $horizontal-padding: 2.5%;
 
-@mixin main-width($sidebar-width, $horizontal-padding) {
+@mixin main-layout($sidebar-width, $horizontal-padding) {
   width: 100% - $sidebar-width - ($horizontal-padding * 2);
+  padding-left: $horizontal-padding;
+  margin-left: $horizontal-padding;
 }
 
 body {
@@ -22,11 +24,9 @@ body {
 }
 
 #main {
-  @include main-width($sidebar-width, $horizontal-padding);
+  @include main-layout($sidebar-width, $horizontal-padding);
   max-width: 720px;
   margin: 0 auto;
-  padding-left: $horizontal-padding;
-  margin-left: $horizontal-padding;
   border-left: 1px solid $border-color;
 }
 
@@ -40,9 +40,7 @@ body {
   }
 
   #main {
-    @include main-width($large-screen-sidebar-width, $large-screen-horizontal-padding);
-    padding-left: $large-screen-horizontal-padding;
-    margin-left: $large-screen-horizontal-padding;
+    @include main-layout($large-screen-sidebar-width, $large-screen-horizontal-padding);
   }
 }
 
