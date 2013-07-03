@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><?php wp_title('|', true, 'right'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Lato:300,400,300italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Lato:300,300italic" rel="stylesheet" type="text/css">
     <?php wp_head(); ?>
 </head>
 
