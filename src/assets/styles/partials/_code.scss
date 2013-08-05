@@ -1,5 +1,7 @@
 @import "../../bower_components/highlightjs-scss/styles/github";
 
+$code-background-color: darken($background-color, 2%);
+
 pre, code {
   font-family: Menlo, Consolas, Monaco, 'Lucida Console', monospace;
   font-size: 14px;
@@ -12,12 +14,12 @@ pre {
 
 code {
   padding: 6px 2px;
+  background-color: $code-background-color;
 }
 
-$code-background-color: darken($background-color, 2%);
 
 pre[class*="highlight"] {
-    background: $code-background-color;
+    background-color: $code-background-color;
     border: 1px solid darken($code-background-color, 5%);
     color: lighten($font-color, 7%);
 }
