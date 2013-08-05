@@ -25,7 +25,7 @@ body {
 
 #main {
   @include main-layout($sidebar-width, $horizontal-padding);
-  max-width: 720px;
+  max-width: $content-max-width;
   margin: 0 auto;
   border-left: 1px solid $border-color;
 }

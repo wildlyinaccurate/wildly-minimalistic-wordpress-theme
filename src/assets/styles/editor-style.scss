@@ -2,3 +2,8 @@
 @import "partials/typography";
 @import "partials/media";
 @import "partials/code";
+
+body {
+  max-width: $content-max-width;
+  font-size: $font-size;
+}

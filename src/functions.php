@@ -58,3 +58,20 @@ function wildly_minimalistic_wp_title($title, $sep)
 }
 
 add_filter('wp_title', 'wildly_minimalistic_wp_title', 10, 2);
+
+/**
+ * Load Google Fonts to use in Tiny MCE
+ *
+ * @param $mce_css string
+ * @return string
+ */
+function wildly_minimalistic_mce_css($mce_css)
+{
+    $protocol = is_ssl() ? 'https' : 'http';
+
+    $mce_css .= ', ' . $protocol . '://fonts.googleapis.com/css?family=Lato:300,300italic';
+
+    return $mce_css;
+}
+
+add_filter('mce_css', 'wildly_minimalistic_mce_css');
