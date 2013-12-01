@@ -1,17 +1,17 @@
 $content-max-width: 720px;
 
-$background-color: #fcfdfe;
-$border-color: darken($background-color, 10%);
+$background-color: rgb(253, 254, 255);
+$border-color: darken($background-color, 7%);
 
-$font-color: #2c3e50;
+$font-color: rgb(12, 23, 31);
 $font-weight: 300;
 $strong-font-weight: 600;
-$font-size: 20px;
+$font-size: 21px;
 $aside-font-size: 17px;
 
-$heading-color: #34495e;
-$link-color: #1abc9c;
-$link-hover-color: darken($link-color, 12%);
+$heading-color: rgb(52, 73, 94);
+$link-color: rgb(16, 160, 210);
+$link-hover-color: lighten($link-color, 15%);
 
 $media-small-screen: "(max-width: 767px)";
 $media-large-screen: "(min-width: 1200px)";
