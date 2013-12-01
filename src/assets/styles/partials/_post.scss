@@ -10,3 +10,9 @@
 .post-meta {
   font-size: $font-size * 0.8;
 }
+
+.wp-caption-text {
+  text-align: center;
+  margin-top: 0;
+  font-size: $small-font-size;
+}
