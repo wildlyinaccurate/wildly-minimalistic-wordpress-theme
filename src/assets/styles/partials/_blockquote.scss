@@ -1,0 +1,28 @@
+$blockquote-background-color: darken($background-color, 1%);
+$blockquote-border-color: darken($background-color, 5%);
+
+blockquote {
+  border: 1px solid $blockquote-border-color;
+  background-color: $blockquote-background-color;
+  margin: 15px 30px;
+  padding: 5px 30px;
+  position: relative;
+
+  &:before, &:after {
+    color: $blockquote-border-color;
+    position: absolute;
+    font-size: 60px;
+  }
+
+  &:before {
+    content: "\201C";
+    top: -20px;
+    left: 5px;
+  }
+
+  &:after {
+    content: "\201E";
+    bottom: -10px;
+    right: 5px;
+  }
+}
