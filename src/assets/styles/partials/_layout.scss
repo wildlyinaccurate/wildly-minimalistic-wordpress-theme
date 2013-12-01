@@ -1,33 +1,13 @@
-$sidebar-width: 23%;
-$horizontal-padding: 2.5%;
-
-@mixin main-layout($sidebar-width, $horizontal-padding) {
-  width: 100% - $sidebar-width - ($horizontal-padding * 2);
-  padding-left: $horizontal-padding;
-  margin-left: $horizontal-padding;
-}
+$horizontal-padding: 6%;
 
 body {
-  padding: 40px $horizontal-padding;
+  padding: 20px $horizontal-padding;
   text-align: center;
 }
 
-#sidebar, #main {
-  text-align: left;
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-#sidebar {
-  vertical-align: top;
-  width: $sidebar-width;
-}
-
 #main {
-  @include main-layout($sidebar-width, $horizontal-padding);
-  max-width: $content-max-width;
-  margin: 0 auto;
-  border-left: 1px solid $border-color;
+  padding: 15px 0;
+  text-align: left;
 }
 
 #footer {
@@ -36,35 +16,8 @@ body {
   margin-top: 30px;
 }
 
-// Reduce sidebar size on large screens
-@media #{$media-large-screen} {
-  $large-screen-sidebar-width: 16%;
-  $large-screen-horizontal-padding: 2%;
-
-  #sidebar {
-    width: $large-screen-sidebar-width;
-  }
-
-  #main {
-    @include main-layout($large-screen-sidebar-width, $large-screen-horizontal-padding);
-  }
-}
-
-// Move the header to the top on smaller screens
 @media #{$media-small-screen} {
   body {
-    padding: 40px ($horizontal-padding * 2);
-  }
-
-  #sidebar {
-    width: 100%;
-    text-align: center;
-  }
-
-  #main {
-    padding-left: 0;
-    margin-left: 0;
-    width: 100%;
-    border-left: none;
+    padding: 30px ($horizontal-padding / 2);
   }
 }

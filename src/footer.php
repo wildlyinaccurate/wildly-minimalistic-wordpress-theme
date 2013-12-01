@@ -1,6 +1,10 @@
+        <div id="sidebar">
+            <?php get_sidebar(); ?>
+        </div> <!-- /#sidebar -->
+
         <footer id="footer">
             <?php dynamic_sidebar('Footer'); ?>
-        </footer>
+        </footer> <!-- /#footer -->
 
         <?php wp_footer(); ?>
 
