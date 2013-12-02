@@ -9,6 +9,10 @@ $strong-font-weight: 600;
 $font-size: 21px;
 $aside-font-size: 17px;
 
+$contrasting-background-color: darken($background-color, 2%);
+$contrasting-border-color: darken($contrasting-background-color, 5%);
+$contrasting-font-color: lighten($font-color, 7%);
+
 $heading-color: rgb(52, 73, 94);
 $link-color: rgb(16, 160, 210);
 $link-hover-color: lighten($link-color, 15%);

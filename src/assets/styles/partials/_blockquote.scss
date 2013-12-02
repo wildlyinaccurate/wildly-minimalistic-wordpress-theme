@@ -1,15 +1,13 @@
-$blockquote-background-color: darken($background-color, 1%);
-$blockquote-border-color: darken($background-color, 6%);
-
 blockquote {
-  border: 1px solid $blockquote-border-color;
-  background-color: $blockquote-background-color;
+  border: 1px solid $contrasting-border-color;
+  background-color: $contrasting-background-color;
+  color: $contrasting-font-color;
   margin: 15px 30px;
   padding: 5px 30px;
   position: relative;
 
   &:before, &:after {
-    color: $blockquote-border-color;
+    color: $contrasting-border-color;
     position: absolute;
     font-size: 60px;
   }
