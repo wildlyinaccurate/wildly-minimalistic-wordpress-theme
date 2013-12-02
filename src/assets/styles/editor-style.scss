@@ -2,6 +2,8 @@
 @import "partials/typography";
 @import "partials/media";
 @import "partials/code";
+@import "partials/blockquote";
+@import "partials/utils";
 
 body {
   max-width: $content-max-width;
